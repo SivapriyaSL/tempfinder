@@ -1,5 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
+import {SafeAreaView, StyleSheet, Text} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import Login from './feature/Login';
+
+const Stack = createNativeStackNavigator();
 
 const App = () => {
   const [showSplashScreen, setSplasshScreen] = useState(true);
@@ -19,11 +24,12 @@ const App = () => {
   }
 
   return (
-    <SafeAreaView>
-      <View>
-        <Text>main Screen</Text>
-      </View>
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={Login} />
+        <Stack.Screen name="lome" component={Login} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
