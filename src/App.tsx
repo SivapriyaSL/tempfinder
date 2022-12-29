@@ -1,21 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import {SafeAreaView, StyleSheet, Text} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Login from './feature/Login';
+import Homepage from './feature/Homepage';
 
-const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
-
-const Stacknavigaiton = () => {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen name="Home" component={() => <Login isLogin />} />
-      <Stack.Screen name="lome" component={Login} />
-    </Stack.Navigator>
-  );
-};
 
 const App = () => {
   const [showSplashScreen, setSplasshScreen] = useState(true);
@@ -23,7 +13,7 @@ const App = () => {
   useEffect(() => {
     setTimeout(() => {
       setSplasshScreen(false);
-    }, 4000);
+    }, 100);
   }, []);
 
   if (showSplashScreen) {
@@ -37,7 +27,7 @@ const App = () => {
   return (
     <NavigationContainer>
       <Tab.Navigator screenOptions={{headerShown: false}}>
-        <Tab.Screen name="Home" component={Stacknavigaiton} />
+        <Tab.Screen name="Home" component={Homepage} />
         <Tab.Screen name="Profile" component={Login} />
       </Tab.Navigator>
     </NavigationContainer>
