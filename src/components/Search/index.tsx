@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {Text, View} from 'react-native';
 import {AutocompleteDropdown} from 'react-native-autocomplete-dropdown';
-import { MAP_ID } from '../../../config';
+import {MAP_ID} from '../../../config';
 
 const mock: any = {
   predictions: [
@@ -106,7 +106,13 @@ const Search = ({setText}: any) => {
   const dropdownController = useRef(null);
   const searchRef = useRef(null);
   return (
-    <View style={{flex: 1, padding: 20, margin: 30}}>
+    <View
+      style={{
+        flex: 1,
+        padding: 20,
+        margin: 5,
+        backgroundColor: 'mediumturquoise',
+      }}>
       <AutocompleteDropdown
         clearOnFocus={false}
         closeOnBlur={true}
@@ -118,8 +124,11 @@ const Search = ({setText}: any) => {
             setTexting('');
           }
         }}
-        containerStyle={{height: 500, backgroundColor: 'red'}}
-        debounce={2000}
+        containerStyle={{
+          height: 500,
+          backgroundColor: 'salmon',
+        }}
+        debounce={1000}
         useFilter={false}
         onClear={() => setTexting('')}
         onSelectItem={item => {

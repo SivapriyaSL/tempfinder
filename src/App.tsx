@@ -4,6 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Login from './feature/Login';
 import Homepage from './feature/Homepage';
+import SplashScreen from './components/SplashScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -17,11 +18,7 @@ const App = () => {
   }, []);
 
   if (showSplashScreen) {
-    return (
-      <SafeAreaView style={styles.container}>
-        <Text style={styles.textStyle}>Temp Finder</Text>
-      </SafeAreaView>
-    );
+    return <SplashScreen />;
   }
 
   return (

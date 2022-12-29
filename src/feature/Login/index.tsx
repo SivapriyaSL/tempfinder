@@ -5,10 +5,8 @@ import styles from './style';
 
 const Login = ({isLogin}: LoginType) => {
   return (
-    <View>
-      <Text style={styles.textStyle}>{`isLogin ${
-        isLogin ? 'yes' : 'no'
-      }`}</Text>
+    <View style={{ padding: 30, margin: 30}}>
+      <Text style={styles.textStyle}>sivapriyasl4300@gmail.com</Text>
     </View>
   );
 };

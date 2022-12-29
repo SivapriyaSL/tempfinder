@@ -37,25 +37,25 @@ const CardView = ({item}: {item: any}) => {
         flex: 1,
         flexDirection: 'column',
         alignContent: 'center',
-        backgroundColor: 'blue',
-        padding: 20,
+        backgroundColor: 'orchid',
+        padding: 30,
         margin: 20,
-        borderRadius: 20,
+        borderRadius: 10,
       }}>
-      <View style={{flex: 0.4}}>
-        <Text style={{textAlign: 'left', color: 'white'}}>
+      <View style={{flex: 0.5}}>
+        <Text style={{textAlign: 'left', color: 'white', fontSize: 16}}>
           {`Place: ${item?.description || ''}` || ''}
         </Text>
       </View>
-      <View style={{flex: 0.6}}>
+      <View style={{flex: 0.7}}>
         {currentWeather ? (
           <View>
-            <Text style={{textAlign: 'center', fontSize: 12, color: 'white'}}>
+            <Text style={{textAlign: 'center', fontSize: 13, color: 'white'}}>
               {`Pressure: ${currentWeather?.main?.pressure}`},{' '}
               {`Humidity: ${currentWeather?.main?.humidity}`},{' '}
               {`Description: ${currentWeather?.weather[0]?.description}`}
             </Text>
-            <Text style={{textAlign: 'center', fontSize: 32, color: 'white'}}>
+            <Text style={{textAlign: 'center', fontSize: 46, color: 'white'}}>
               {`${(currentWeather?.main?.temp - 273.15).toFixed(0)} ℃`}
             </Text>
           </View>
