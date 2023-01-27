@@ -60,7 +60,7 @@ const CardView = ({item}: {item: any}) => {
             </Text>
           </View>
         ) : (
-          <Text style={{textAlign: 'center', fontSize: 32, color: 'white'}}>
+          <Text style={{textAlign: 'center', fontSize: 32, color: 'black'}}>
             No Data found
           </Text>
         )}
